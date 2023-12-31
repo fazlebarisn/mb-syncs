@@ -32,25 +32,27 @@
     <div class="mb-syncs-content" id="tab-2">
         <div class="d-flex">
             <form method="GET">
-                <input type="hidden" name="pageno" value="1">
+                <input type="hidden" name="product-item-page" value="1">
                 <input type="hidden" name="post_type" value="product">
-                <input type="hidden" name="page" value="product-sync">
+                <input type="hidden" name="page" value="menual-product-sync">
                 <?php
                 submit_button('All ICITEM Product Sync', 'primary', 'mb-product-icitem-sync');
                 ?>
             </form>
+
             <form method="GET">
-                <input type="hidden" name="pagenoformeta" value="1">
+                <input type="hidden" name="product-icpricp-page" value="1">
                 <input type="hidden" name="post_type" value="product">
-                <input type="hidden" name="page" value="product-sync">
+                <input type="hidden" name="page" value="menual-product-sync">
                 <?php
                 submit_button('All ICPRICP Product Sync', 'primary', 'mb-product-icpricp-sync');
                 ?>
             </form>
+
             <form method="GET">
-                <input type="hidden" name="pagenoforloc" value="1">
+                <input type="hidden" name="product-iciloc-page" value="1">
                 <input type="hidden" name="post_type" value="product">
-                <input type="hidden" name="page" value="product-sync">
+                <input type="hidden" name="page" value="menual-product-sync">
                 <?php
                 submit_button('All ICILOC Product Sync', 'primary', 'mb-product-iciloc-sync');
                 ?>
