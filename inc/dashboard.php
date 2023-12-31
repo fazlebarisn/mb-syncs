@@ -2,14 +2,15 @@
     <h1>Modern Beauty Synchronize</h1>
 
     <ul class="mb-syncs-tabs">
-        <li class="mb-syncs-tab active" data-tab="tab-1">Products Cron</li>
-        <li class="mb-syncs-tab" data-tab="tab-2">Products</li>
+        <li class="mb-syncs-tab active" data-tab="tab-1">Products</li>
+        <li class="mb-syncs-tab" data-tab="tab-2">Products Menual</li>
         <li class="mb-syncs-tab" data-tab="tab-3">Categories</li>
         <li class="mb-syncs-tab" data-tab="tab-4">Customer</li>
         <li class="mb-syncs-tab" data-tab="tab-5">All Image</li>
         <li class="mb-syncs-tab" data-tab="tab-6">Customer Pricelist</li>
     </ul>
     <div class="mb-syncs-content first active" id="tab-1">
+        <h1>Cron Synchronize</h1>
         <div class="d-flex">
             <form method="POST">
                 <?php
@@ -24,6 +25,36 @@
             <form method="POST">
                 <?php
                 submit_button('Start ICILOC Cron Now', 'primary', 'mb-iciloc-product-sync-cron');
+                ?>
+            </form>
+        </div>
+        <h1>Menual Synchronize</h1>
+        <div class="d-flex">
+        
+            <form method="GET">
+                <input type="hidden" name="product-item-page" value="1">
+                <input type="hidden" name="post_type" value="product">
+                <input type="hidden" name="page" value="menual-product-sync">
+                <?php
+                submit_button('All ICITEM Product Sync', 'primary', 'mb-product-icitem-sync');
+                ?>
+            </form>
+
+            <form method="GET">
+                <input type="hidden" name="product-icpricp-page" value="1">
+                <input type="hidden" name="post_type" value="product">
+                <input type="hidden" name="page" value="menual-product-sync">
+                <?php
+                submit_button('All ICPRICP Product Sync', 'primary', 'mb-product-icpricp-sync');
+                ?>
+            </form>
+
+            <form method="GET">
+                <input type="hidden" name="product-iciloc-page" value="1">
+                <input type="hidden" name="post_type" value="product">
+                <input type="hidden" name="page" value="menual-product-sync">
+                <?php
+                submit_button('All ICILOC Product Sync', 'primary', 'mb-product-iciloc-sync');
                 ?>
             </form>
         </div>
