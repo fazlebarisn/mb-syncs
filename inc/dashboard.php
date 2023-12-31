@@ -6,6 +6,7 @@
         <li class="mb-syncs-tab" data-tab="tab-2">Product Sync</li>
         <li class="mb-syncs-tab" data-tab="tab-3">Categories Sync</li>
         <li class="mb-syncs-tab" data-tab="tab-4">Customer Sync</li>
+        <li class="mb-syncs-tab" data-tab="tab-5">All Image Sync</li>
     </ul>
     <div class="mb-syncs-content first active" id="tab-1">
         <div class="d-flex">
@@ -81,6 +82,28 @@
                     submit_button( 'Menual Start', 'primary', 'mb-arcmm-menual-sync-cron' );
                 ?>
             </form>
+        </div>
+    </div>
+    <div class="mb-syncs-content" id="tab-5">
+        <div class="d-flex">
+            <div class="d-flex">
+            	<form method="GET">
+                    <input type="hidden" name="j3-upload-img" value="1">
+                    <input type="hidden" name="page" value="mbai-sync">
+                    <?php
+                        submit_button('All Image Upload', 'primary', 'mb-all-img-upload');
+                    ?>
+                </form>
+
+            	<form method="GET">
+                    <input type="hidden" name="j3-sync-img" value="1">
+                    <input type="hidden" name="page" value="mbai-sync">
+                    <?php
+                        submit_button('All Image LInk Sync', 'primary', 'mb-all-img-link-sync');
+                    ?>
+                </form>
+
+            </div>
         </div>
     </div>
 </div>
