@@ -38,3 +38,10 @@
   display: flex;
   gap: 10px;
 }
+
+.mb-syncs-content .d-flex.mb-category-sync form,
+.mb-syncs-content .d-flex.mb-customer-sync form
+{
+  display: flex;
+  gap: 10px;
+}

@@ -2,9 +2,10 @@
     <h1>Modern Beauty Synchronize</h1>
 
     <ul class="mb-syncs-tabs">
-        <li class="mb-syncs-tab active" data-tab="tab-1">Cron Sincronize </li>
-        <li class="mb-syncs-tab" data-tab="tab-2">Tab Two</li>
-        <li class="mb-syncs-tab" data-tab="tab-3">Tab Three</li>
+        <li class="mb-syncs-tab active" data-tab="tab-1">Products Cron Sync</li>
+        <li class="mb-syncs-tab" data-tab="tab-2">Product Sync</li>
+        <li class="mb-syncs-tab" data-tab="tab-3">Categories Sync</li>
+        <li class="mb-syncs-tab" data-tab="tab-4">Customer Sync</li>
     </ul>
     <div class="mb-syncs-content first active" id="tab-1">
         <div class="d-flex">
@@ -25,39 +26,61 @@
                 submit_button('Start ICILOC Cron Now', 'primary', 'mb-iciloc-product-sync-cron');
                 ?>
             </form>
-
-            <form method="POST">
-                <?php
-                submit_button('Start Trash Cron Now', 'primary', 'mb-trash-product-sync-cron');
-                ?>
-            </form>
         </div>
 
     </div>
     <div class="mb-syncs-content" id="tab-2">
-        <p>
-            I put my armor on, show you how strong I am
-            I put my armor on, I'll show you that I am
-            I'm unstoppable
-            I'm a Porsche with no brakes
-            I'm invincible
-            Yeah, I win every single game
-            I'm so powerful
-            I don't need batteries to play
-            I'm so confident
-            Yeah, I'm unstoppable today
-        </p>
+        <div class="d-flex">
+            <form method="GET">
+                <input type="hidden" name="pageno" value="1">
+                <input type="hidden" name="post_type" value="product">
+                <input type="hidden" name="page" value="product-sync">
+                <?php
+                submit_button('All ICITEM Product Sync', 'primary', 'mb-product-icitem-sync');
+                ?>
+            </form>
+            <form method="GET">
+                <input type="hidden" name="pagenoformeta" value="1">
+                <input type="hidden" name="post_type" value="product">
+                <input type="hidden" name="page" value="product-sync">
+                <?php
+                submit_button('All ICPRICP Product Sync', 'primary', 'mb-product-icpricp-sync');
+                ?>
+            </form>
+            <form method="GET">
+                <input type="hidden" name="pagenoforloc" value="1">
+                <input type="hidden" name="post_type" value="product">
+                <input type="hidden" name="page" value="product-sync">
+                <?php
+                submit_button('All ICILOC Product Sync', 'primary', 'mb-product-iciloc-sync');
+                ?>
+            </form>
+        </div>
     </div>
     <div class="mb-syncs-content" id="tab-3">
-        <p>
-            Break down, only alone I will cry out loud
-            You'll never see what's hiding out
-            Hiding out deep down
-            Yeah, yeah
-            I know, I've heard that to let your feelings show
-            Is the only way to make friendships grow
-            But I'm too afraid now
-            Yeah, yeah
-        </p>
+        <div class="d-flex mb-category-sync">
+            <form method="POST">
+                <?php 
+                    submit_button( 'Sync Product Categories', 'primary', 'mb-submit-product-categories-sync' );
+
+                    submit_button( 'Start Cron From Now', 'primary', 'mb-submit-start-cron' );
+                ?>
+            </form>
+        </div>
+    </div>
+    <div class="mb-syncs-content" id="tab-4">
+        <div class="d-flex mb-customer-sync">
+            <form method="GET">
+                <input type="hidden" name="pageno" value="1">
+                <input type="hidden" name="page" value="mb-customer-sync">
+                <?php submit_button('Get All Customer metadata from arcmn Table', 'primary', 'mb-customer-metadata-sync'); ?>
+            </form>
+            <form method="POST">
+                <?php 
+                    submit_button( 'Start arcmm Cron Now', 'primary', 'mb-arcmm-sync-cron' );
+                    submit_button( 'Menual Start', 'primary', 'mb-arcmm-menual-sync-cron' );
+                ?>
+            </form>
+        </div>
     </div>
 </div>
