@@ -1,34 +1,40 @@
 /* Tab design start*/
 .mb-syncs-tabs {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    margin-bottom: -5px;
-  }
-  
-  .mb-syncs-tab {
-    margin-right: 10px;
-    cursor: pointer;
-    padding: 10px 20px;
-    background-color: #f0f0f0;
-    border-radius: 5px 5px 0 0;
-    transition: background-color 0.3s;
-  }
-  
-  .mb-syncs-tab.active {
-      background-color: #fff;
-      border: 1px solid darkgray;
-      border-bottom: none;
-  }
-  
-  .mb-syncs-content {
-    display: none;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 0 0 5px 5px;
-    background-color: #fff;
-  }
-  
-  .mb-syncs-content.active {
-    display: block;
-  }
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin-bottom: -5px;
+}
+
+.mb-syncs-tab {
+  margin-right: 10px;
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border-radius: 5px 5px 0 0;
+  transition: background-color 0.3s;
+}
+
+.mb-syncs-tab.active {
+  background-color: #fff;
+  border: 1px solid darkgray;
+  border-bottom: none;
+}
+
+.mb-syncs-content {
+  display: none;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
+  background-color: #fff;
+}
+
+.mb-syncs-content.active {
+  display: block;
+}
+/* Tab design end*/
+
+.mb-syncs-content .d-flex {
+  display: flex;
+  gap: 10px;
+}

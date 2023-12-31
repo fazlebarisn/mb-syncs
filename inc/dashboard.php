@@ -1,22 +1,38 @@
 <div class="wrap mb-syncs-admin">
-	<h1>Modern Beauty Synchronize</h1>
+    <h1>Modern Beauty Synchronize</h1>
 
-	<ul class="mb-syncs-tabs">
-		<li class="mb-syncs-tab active" data-tab="tab-1">Tab One</li>
-		<li class="mb-syncs-tab" data-tab="tab-2">Tab Two</li>
-		<li class="mb-syncs-tab" data-tab="tab-3">Tab Three</li>
-	</ul>
+    <ul class="mb-syncs-tabs">
+        <li class="mb-syncs-tab active" data-tab="tab-1">Cron Sincronize </li>
+        <li class="mb-syncs-tab" data-tab="tab-2">Tab Two</li>
+        <li class="mb-syncs-tab" data-tab="tab-3">Tab Three</li>
+    </ul>
     <div class="mb-syncs-content first active" id="tab-1">
-        <p>
-            All smiles, I know what it takes to fool this town
-            I'll do it 'til the sun goes down
-            And all through the nighttime
-            Oh, yeah
-            Oh, yeah, I'll tell you what you wanna hear
-            Leave my sunglasses on while I shed a tear
-            It's never the right time
-            Yeah, yeah
-        </p>
+        <div class="d-flex">
+            <form method="POST">
+                <?php
+                submit_button('Start ICITEM Cron Now', 'primary', 'mb-icitem-product-sync-cron');
+                ?>
+            </form>
+
+            <form method="POST">
+                <?php
+                submit_button('Start ICPRICP Cron Now', 'primary', 'mb-icpricp-product-sync-cron');
+                ?>
+            </form>
+
+            <form method="POST">
+                <?php
+                submit_button('Start ICILOC Cron Now', 'primary', 'mb-iciloc-product-sync-cron');
+                ?>
+            </form>
+
+            <form method="POST">
+                <?php
+                submit_button('Start Trash Cron Now', 'primary', 'mb-trash-product-sync-cron');
+                ?>
+            </form>
+        </div>
+
     </div>
     <div class="mb-syncs-content" id="tab-2">
         <p>
