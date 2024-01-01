@@ -5,7 +5,7 @@
         <li class="mb-syncs-tab active" data-tab="tab-1">Products</li>
         <li class="mb-syncs-tab" data-tab="tab-2">Categories</li>
         <li class="mb-syncs-tab" data-tab="tab-3">Customer</li>
-        <li class="mb-syncs-tab" data-tab="tab-4">All Image</li>
+        <li class="mb-syncs-tab" data-tab="tab-4">images</li>
         <li class="mb-syncs-tab" data-tab="tab-5">Product Filter</li>
     </ul>
     <div class="mb-syncs-content first active" id="tab-1">
@@ -98,6 +98,7 @@
         </div>
     </div>
     <div class="mb-syncs-content" id="tab-4">
+        <h1>Product Images</h1>
         <div class="d-flex">
             <div class="d-flex">
                 <form method="GET">
@@ -115,6 +116,14 @@
                     ?>
                 </form>
             </div>
+        </div>
+        <h1>Gallery Images</h1>
+        <div class="d-flex">
+            <form method="POST">
+                <?php 
+                    submit_button('Start Product Image Cron Now', 'primary', 'mb-product-image-sync-cron');
+                ?>
+            </form>
         </div>
     </div>
     <div class="mb-syncs-content" id="tab-5">
