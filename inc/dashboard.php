@@ -158,7 +158,7 @@
     </div>
     <div class="mb-syncs-content" id="tab-7">
         <div class="d-flex">
-        <form method="POST">
+            <form method="POST">
                 <button class="button button-primary" name="add-all-data">Sync Restriction Segval</button>
                 <button class="button button-primary" name="start-sync-res">Start Cron</button>
             </form>
