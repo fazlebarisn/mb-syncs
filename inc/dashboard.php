@@ -1,13 +1,12 @@
 <div class="wrap mb-syncs-admin">
-    <h1>Modern Beauty Synchronize</h1>
+    <h1>Modern Beauty Synchronization</h1>
 
     <ul class="mb-syncs-tabs">
         <li class="mb-syncs-tab active" data-tab="tab-1">Products</li>
-        <li class="mb-syncs-tab" data-tab="tab-2">Products Menual</li>
-        <li class="mb-syncs-tab" data-tab="tab-3">Categories</li>
-        <li class="mb-syncs-tab" data-tab="tab-4">Customer</li>
-        <li class="mb-syncs-tab" data-tab="tab-5">All Image</li>
-        <li class="mb-syncs-tab" data-tab="tab-6">Customer Pricelist</li>
+        <li class="mb-syncs-tab" data-tab="tab-2">Categories</li>
+        <li class="mb-syncs-tab" data-tab="tab-3">Customer</li>
+        <li class="mb-syncs-tab" data-tab="tab-4">All Image</li>
+        <li class="mb-syncs-tab" data-tab="tab-5">Product Filter</li>
     </ul>
     <div class="mb-syncs-content first active" id="tab-1">
         <h1>Cron Synchronize</h1>
@@ -30,7 +29,6 @@
         </div>
         <h1>Menual Synchronize</h1>
         <div class="d-flex">
-        
             <form method="GET">
                 <input type="hidden" name="product-item-page" value="1">
                 <input type="hidden" name="post_type" value="product">
@@ -39,7 +37,6 @@
                 submit_button('All ICITEM Product Sync', 'primary', 'mb-product-icitem-sync');
                 ?>
             </form>
-
             <form method="GET">
                 <input type="hidden" name="product-icpricp-page" value="1">
                 <input type="hidden" name="post_type" value="product">
@@ -48,7 +45,6 @@
                 submit_button('All ICPRICP Product Sync', 'primary', 'mb-product-icpricp-sync');
                 ?>
             </form>
-
             <form method="GET">
                 <input type="hidden" name="product-iciloc-page" value="1">
                 <input type="hidden" name="post_type" value="product">
@@ -61,36 +57,6 @@
 
     </div>
     <div class="mb-syncs-content" id="tab-2">
-        <div class="d-flex">
-            <form method="GET">
-                <input type="hidden" name="product-item-page" value="1">
-                <input type="hidden" name="post_type" value="product">
-                <input type="hidden" name="page" value="menual-product-sync">
-                <?php
-                submit_button('All ICITEM Product Sync', 'primary', 'mb-product-icitem-sync');
-                ?>
-            </form>
-
-            <form method="GET">
-                <input type="hidden" name="product-icpricp-page" value="1">
-                <input type="hidden" name="post_type" value="product">
-                <input type="hidden" name="page" value="menual-product-sync">
-                <?php
-                submit_button('All ICPRICP Product Sync', 'primary', 'mb-product-icpricp-sync');
-                ?>
-            </form>
-
-            <form method="GET">
-                <input type="hidden" name="product-iciloc-page" value="1">
-                <input type="hidden" name="post_type" value="product">
-                <input type="hidden" name="page" value="menual-product-sync">
-                <?php
-                submit_button('All ICILOC Product Sync', 'primary', 'mb-product-iciloc-sync');
-                ?>
-            </form>
-        </div>
-    </div>
-    <div class="mb-syncs-content" id="tab-3">
         <div class="d-flex mb-category-sync">
             <form method="POST">
                 <?php
@@ -100,22 +66,38 @@
             </form>
         </div>
     </div>
-    <div class="mb-syncs-content" id="tab-4">
-        <div class="d-flex mb-customer-sync">
+    <div class="mb-syncs-content" id="tab-3">
+        <h1>Customer Synchronize</h1>
+        <div class="d-flex">
             <form method="GET">
-                <input type="hidden" name="pageno" value="1">
                 <input type="hidden" name="page" value="mb-customer-sync">
-                <?php submit_button('Get All Customer metadata from arcmn Table', 'primary', 'mb-customer-metadata-sync'); ?>
+                <input type="hidden" name="page_no" value="1">
+                <?php submit_button('Run', 'primary', 'mb-all-customer-sync'); ?>
             </form>
             <form method="POST">
                 <?php
-                submit_button('Start arcmm Cron Now', 'primary', 'mb-arcmm-sync-cron');
-                submit_button('Menual Start', 'primary', 'mb-arcmm-menual-sync-cron');
+                submit_button('Start ezposcustomer Cron Now', 'primary', 'mb-ezposcustomer-sync-cron');
+                // submit_button( 'Menual Start', 'primary', 'mb-ezposcustomer-menual-sync-cron' );
+                ?>
+            </form>
+        </div>
+        <h1>Customer Pricelist Synchronize</h1>
+        <div class="d-flex">
+            <form method="GET">
+                <input type="hidden" name="page-number" value="1">
+                <input type="hidden" name="page" value="mb-customer-pricelist-sync">
+
+                <?php submit_button('Get All Customer Pricelist from ezposcustomer Table', 'primary', 'mb-customer-pricelist-sync'); ?>
+            </form>
+            <form method="POST">
+                <?php
+                submit_button('Start ezposcustomer Cron Now', 'primary', 'mb-ezposcustomer-sync-cron');
+                // submit_button( 'Menual Start', 'primary', 'mb-ezposcustomer-menual-sync-cron' );
                 ?>
             </form>
         </div>
     </div>
-    <div class="mb-syncs-content" id="tab-5">
+    <div class="mb-syncs-content" id="tab-4">
         <div class="d-flex">
             <div class="d-flex">
                 <form method="GET">
@@ -135,18 +117,14 @@
             </div>
         </div>
     </div>
-    <div class="mb-syncs-content" id="tab-6">
+    <div class="mb-syncs-content" id="tab-5">
         <div class="d-flex">
             <form method="GET">
-                <input type="hidden" name="page-number" value="1">
-                <input type="hidden" name="page" value="mb-customer-pricelist-sync">
-
-                <?php submit_button('Get All Customer Pricelist from ezposcustomer Table', 'primary', 'mb-customer-pricelist-sync'); ?>
-            </form>
-            <form method="POST">
-                <?php
-                submit_button('Start ezposcustomer Cron Now', 'primary', 'mb-ezposcustomer-sync-cron');
-                // submit_button( 'Menual Start', 'primary', 'mb-ezposcustomer-menual-sync-cron' );
+                    <input type="hidden" name="filter-page" value="1">
+                    <input type="hidden" name="post_type" value="product">
+                    <input type="hidden" name="page" value="product-filter-sync">
+                <?php 
+                    submit_button('Start Product Filter Sync', 'primary', 'mb-product-filter-sync');
                 ?>
             </form>
         </div>
