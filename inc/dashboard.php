@@ -7,6 +7,7 @@
         <li class="mb-syncs-tab" data-tab="tab-3">Customer</li>
         <li class="mb-syncs-tab" data-tab="tab-4">images</li>
         <li class="mb-syncs-tab" data-tab="tab-5">Product Filter</li>
+        <li class="mb-syncs-tab" data-tab="tab-6">Customer Metadata</li>
     </ul>
     <div class="mb-syncs-content first active" id="tab-1">
         <h1>Cron Synchronize</h1>
@@ -120,8 +121,8 @@
         <h1>Gallery Images</h1>
         <div class="d-flex">
             <form method="POST">
-                <?php 
-                    submit_button('Start Product Image Cron Now', 'primary', 'mb-product-image-sync-cron');
+                <?php
+                submit_button('Start Product Image Cron Now', 'primary', 'mb-product-image-sync-cron');
                 ?>
             </form>
         </div>
@@ -129,11 +130,27 @@
     <div class="mb-syncs-content" id="tab-5">
         <div class="d-flex">
             <form method="GET">
-                    <input type="hidden" name="filter-page" value="1">
-                    <input type="hidden" name="post_type" value="product">
-                    <input type="hidden" name="page" value="product-filter-sync">
-                <?php 
-                    submit_button('Start Product Filter Sync', 'primary', 'mb-product-filter-sync');
+                <input type="hidden" name="filter-page" value="1">
+                <input type="hidden" name="post_type" value="product">
+                <input type="hidden" name="page" value="product-filter-sync">
+                <?php
+                submit_button('Start Product Filter Sync', 'primary', 'mb-product-filter-sync');
+                ?>
+            </form>
+        </div>
+    </div>
+    <div class="mb-syncs-content" id="tab-6">
+        <h1>Disountable Customer Metadata</h1>
+        <div class="d-flex">
+            <form method="GET">
+                <input type="hidden" name="page-no" value="1">
+                <input type="hidden" name="page" value="mbdcm-sync">
+                <?php submit_button('Save', 'primary', 'mb-customer-metadata-sync'); ?>
+            </form>
+            <form method="POST">
+                <?php
+                submit_button('Start arcmm Cron Now', 'primary', 'mb-arcmm-sync-cron');
+                // submit_button( 'Menual Start', 'primary', 'mb-arcmm-menual-sync-cron' );
                 ?>
             </form>
         </div>
