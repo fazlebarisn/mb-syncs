@@ -8,6 +8,7 @@
         <li class="mb-syncs-tab" data-tab="tab-4">images</li>
         <li class="mb-syncs-tab" data-tab="tab-5">Product Filter</li>
         <li class="mb-syncs-tab" data-tab="tab-6">Customer Metadata</li>
+        <li class="mb-syncs-tab" data-tab="tab-7">Category Restrictions</li>
     </ul>
     <div class="mb-syncs-content first active" id="tab-1">
         <h1>Cron Synchronize</h1>
@@ -152,6 +153,14 @@
                 submit_button('Start arcmm Cron Now', 'primary', 'mb-arcmm-sync-cron');
                 // submit_button( 'Menual Start', 'primary', 'mb-arcmm-menual-sync-cron' );
                 ?>
+            </form>
+        </div>
+    </div>
+    <div class="mb-syncs-content" id="tab-7">
+        <div class="d-flex">
+        <form method="POST">
+                <button class="button button-primary" name="add-all-data">Sync Restriction Segval</button>
+                <button class="button button-primary" name="start-sync-res">Start Cron</button>
             </form>
         </div>
     </div>
