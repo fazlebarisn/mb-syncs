@@ -66,11 +66,28 @@
         </div>
     </div>
     <div class="mb-syncs-content" id="tab-2">
+        <h1>Default Category</h1>
         <div class="d-flex mb-category-sync">
             <form method="POST">
                 <?php
                 submit_button('Sync Product Categories', 'primary', 'mb-submit-product-categories-sync');
                 submit_button('Start Cron From Now', 'primary', 'mb-submit-start-cron');
+                ?>
+            </form>
+        </div>
+        <h1>MB Category</h1>
+        <div class="d-flex">
+            <form method="GET">
+                <input type="hidden" name="img-page" value="1">
+                <input type="hidden" name="post_type" value="product">
+                <input type="hidden" name="page" value="product-image-sync">
+                <?php
+                submit_button('Start Product Image MOVE Now', 'primary', 'mb-product-image-move');
+                ?>
+            </form>
+            <form method="POST">
+                <?php
+                submit_button('Start Product Image Cron Now', 'primary', 'mb-product-image-sync-cron');
                 ?>
             </form>
         </div>
