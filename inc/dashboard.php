@@ -55,8 +55,15 @@
                 submit_button('All ICILOC Product Sync', 'primary', 'mb-product-iciloc-sync');
                 ?>
             </form>
+            <form method="GET">
+                <input type="hidden" name="j3-mijoshop-product" value="1">
+                <input type="hidden" name="post_type" value="product">
+                <input type="hidden" name="page" value="menual-product-sync">
+                <?php
+                submit_button('All Mijoshop Product Sync', 'primary', 'j3-mijoshop-product-sync');
+                ?>
+            </form>
         </div>
-
     </div>
     <div class="mb-syncs-content" id="tab-2">
         <div class="d-flex mb-category-sync">
